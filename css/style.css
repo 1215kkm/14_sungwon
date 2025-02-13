@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+@import url(reset.css);
+@import url(font.css);
+
+html {font-size: 10px;}
+body {background: #EEECEA; }
+
+header {height: 126px; padding: 0 11rem; box-sizing: border-box;}
+header h1 {}
+header h1 a {}
+header nav {}
+header nav .gnb {}
+header nav .phone {}
+
+#visual {padding: 0 11rem; box-sizing: border-box;}
+#visual .textbox {}
+#visual .textbox strong {}
+#visual .textbox p {}
+#visual .textbox .contact .tit {}
+#visual .textbox .contact .mail {}
+#visual .textbox .contact .mail img {}
+
+#visual .imgbox {}
+#visual .imgbox .slidebox {}
+#visual .imgbox .slidebox .slide {}
+#visual .imgbox .slidebox .slide img {}
+#visual .imgbox .slidebox .linkbox {}
+#visual .imgbox .slidebox .linkbox a {}
+
+
+#section_box {padding: 0 11rem; box-sizing: border-box;}
+#section1 {}
+#section1 a {}
+#section1 a .iconbox {}
+#section1 a .iconbox img {}
+#section1 a .textbox {}
+#section1 a .textbox h3 {}
+#section1 a .textbox p {}
+
+
+#section2 {}
+#section2 .content {}
+#section2 .content a {}
+#section2 .content a .web {}
+#section2 .content a .web img {}
+#section2 .content a .textbox {}
+#section2 .content a .textbox em {}
+#section2 .content a .textbox h3 {}
+#section2 .content a .textbox p {}
+#section2 .content a .textbox .icon {}
+#section2 .content a .textbox .icon img {}
+
+
+#section3 {}
+#section3 h2 {}
+#section3 .content {}
+#section3 .content li {}
+#section3 .content li img {}
+
+
+#section4 {}
+#section4 h2 {}
+#section4 .content {}
+#section4 .content li {}
+#section4 .content li img {}
+
+
+footer {padding: 0 11rem; box-sizing: border-box;}
+footer h2 {}
+footer .myinfo {}
+footer .myinfo li {}
+footer .myinfo li .tit {}
+footer .myinfo li a {}
