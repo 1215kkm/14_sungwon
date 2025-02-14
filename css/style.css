@@ -4,71 +4,214 @@
 @import url(font.css);
 
 html {font-size: 10px;}
-body {background: #EEECEA; }
+body {
+    --gap1 : 7rem;
+    --round1 : 6rem;
+   
+    --fontTit1 : 3.8rem;
+    --fontCont1 : 2rem;
+    --fontCate1 : 2rem;
+    --fontH2 : 12.8rem;
 
-header {height: 126px; padding: 0 11rem; box-sizing: border-box;}
-header h1 {}
+    --colorCate1 : #3271BB;
+    --colorTxt1 : #252525;
+    --colorTxt2 : #7c7c7c;
+    --colorTxtH2 : #313741;
+}
+
+body {background: #EEECEA; overflow-x: hidden; }
+
+.effect_up {transition: 0.2s; position: relative; top: 0;}
+.effect_up:hover {top: -1rem;}
+
+header {height: 126px; padding: 3.2rem 7vw; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; border: 1px solid #DDDDDD; }
+header h1 {transition: .2s; width: 70px;}
 header h1 a {}
-header nav {}
-header nav .gnb {}
-header nav .phone {}
+header h1 a img {width: 100%;}
+header nav {flex-grow: 1;}
+header nav .gnb {font-size: 1.8rem; display: flex; justify-content: flex-end; margin-right: 3vw;}
+header nav .gnb li {text-transform: uppercase; position: relative; }
+header nav .gnb li a {padding:5.1rem 3.5rem; display: block;}
+header nav .gnb li:hover::before {content: ""; position: absolute; width: 100%; height: 1px; background: #000; bottom: 0;}
 
-#visual {padding: 0 11rem; box-sizing: border-box;}
-#visual .textbox {}
-#visual .textbox strong {}
-#visual .textbox p {}
-#visual .textbox .contact .tit {}
-#visual .textbox .contact .mail {}
+header .phone {background: #252525; width: 200px; height: 65px; border-radius: 50px; display: flex; justify-content: center; align-items: center; transition: .2s;}
+header .phone:hover img {animation: phone 0.1s infinite alternate linear;}
+@keyframes phone {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-10deg)}
+}
+
+header.on {position: fixed; width: 100%; top: 0; z-index: 777; height: 60px; background: #fff;}
+header.on nav .gnb li a {padding:2.2rem 3.5rem;}
+header.on h1 {width: 50px;}
+header.on .phone {width: 200px; height: 50px;}
+header.on ~ #visual {margin-top: 126px;}
+
+
+#visual {padding: 0 11rem; box-sizing: border-box; padding-top:9rem; display: flex; justify-content: space-between;}
+#visual .textbox {width: 55%;}
+#visual .textbox strong {font-size: 12.8rem; line-height: 1.1; font-family: 'Paperlogy-7Bold'; color: #313741;display: flex; flex-wrap: wrap; }
+#visual .textbox strong span {animation: visualText 1s forwards; opacity: 0;}
+#visual .textbox strong span.ma {margin-right: 5rem;}
+@keyframes visualText {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+#visual .textbox strong span:nth-of-type(1) {animation-delay: 0.1s;}
+#visual .textbox strong span:nth-of-type(2) {animation-delay: 0.2s;}
+#visual .textbox strong span:nth-of-type(3) {animation-delay: 0.3s;}
+#visual .textbox strong span:nth-of-type(4) {animation-delay: 0.4s;}
+#visual .textbox strong span:nth-of-type(5) {animation-delay: 0.5s;}
+#visual .textbox strong span:nth-of-type(6) {animation-delay: 0.6s;}
+#visual .textbox strong span:nth-of-type(7) {animation-delay: 0.7s;}
+#visual .textbox strong span:nth-of-type(8) {animation-delay: 0.8s;}
+#visual .textbox strong span:nth-of-type(9) {animation-delay: 0.9s;}
+#visual .textbox strong span:nth-of-type(10) {animation-delay: 1.0s;}
+#visual .textbox strong span:nth-of-type(11) {animation-delay: 1.1s;}
+#visual .textbox strong span:nth-of-type(12) {animation-delay: 1.2s;}
+#visual .textbox strong span:nth-of-type(13) {animation-delay: 1.3s;}
+#visual .textbox strong span:nth-of-type(14) {animation-delay: 1.4s;}
+#visual .textbox strong span:nth-of-type(15) {animation-delay: 1.5s;}
+#visual .textbox strong span:nth-of-type(16) {animation-delay: 1.6s;}
+#visual .textbox strong span:nth-of-type(17) {animation-delay: 1.7s;}
+#visual .textbox strong span:nth-of-type(18) {animation-delay: 1.8s;}
+#visual .textbox strong span:nth-of-type(19) {animation-delay: 1.9s;}
+
+#visual .textbox p {font-size: 2.4rem;margin-top: 5rem; margin-bottom: 7rem; color: #7c7c7c; line-height: 1.5;font-family: 'Paperlogy-6SemiBold'; }
+#visual .textbox p span {animation: visualP 2s forwards; opacity: 0; position: relative; transform-origin: left; display: inline-block;}
+@keyframes visualP {
+    0% {top: 5rem; left: 10rem; opacity: 0; }
+    100% {top: 0rem; left: 0rem; opacity: 1; }
+}
+#visual .textbox p span:nth-of-type(1) {animation-delay: 1.1s;}
+#visual .textbox p span:nth-of-type(2) {animation-delay: 1.2s;}
+#visual .textbox p span:nth-of-type(3) {animation-delay: 1.3s;}
+#visual .textbox p span:nth-of-type(4) {animation-delay: 1.4s;}
+#visual .textbox p span:nth-of-type(5) {animation-delay: 1.5s;}
+
+#visual .textbox .contact {display: flex; align-items: center; gap: 4.5rem; align-items: center;}
+.titOrange {padding: 4rem 8rem; background: linear-gradient(90deg, #FC9551, #F9AC51); font-size: 3rem; color: #252525; border-radius: 100px; display: inline-block;}
+#visual .textbox .contact .mail {font-size: 3rem; display: flex; align-items: center; gap: 1.5rem; }
 #visual .textbox .contact .mail img {}
 
-#visual .imgbox {}
-#visual .imgbox .slidebox {}
+#visual .imgbox {width: 45%; position: relative;}
+#visual .imgbox .slidebox {text-align: center; position: relative; height: 100%;}
 #visual .imgbox .slidebox .slide {}
-#visual .imgbox .slidebox .slide img {}
-#visual .imgbox .slidebox .linkbox {}
-#visual .imgbox .slidebox .linkbox a {}
+#visual .imgbox .slidebox .slide img {width: 100%; transform: rotate(180deg); animation: slideCircle 1s forwards ease-out; opacity: 0; animation-delay: 1s;}
+@keyframes slideCircle {
+    0% {transform: rotate(1000deg) scale(0.3);}
+    100% {transform: rotate(0deg) scale(1);opacity: 1; }
+}
+
+#visual .imgbox .slidebox .sungwon {position: absolute; z-index: 2; text-align: center; top: -4rem; left: 50%; transform: translateX(-50%); width: 100%;}
+#visual .imgbox .slidebox .sungwon img {width: 100%;}
+#visual .imgbox .slidebox .linkbox {display: flex; gap: 4rem; position: absolute; width: 100%; bottom: 8rem; z-index: 2; justify-content: center;}
+#visual .imgbox .slidebox .linkbox a {font-size: 2rem; background: #fff; border-radius:3rem; padding: 4rem 10rem; }
 
 
 #section_box {padding: 0 11rem; box-sizing: border-box;}
-#section1 {}
-#section1 a {}
-#section1 a .iconbox {}
+#section1 {display: flex; justify-content: space-between; gap: 2.4rem; padding: 7rem 0 13.3rem;} 
+#section1 a {flex-grow: 1; background: #fff; padding: 2.3rem; display: flex; align-items: center; gap: 1.6rem; border-radius: 100px; width: 100px;}
+#section1 a .iconbox {width: 7rem; height: 7rem; background: #000; border-radius: 50%; overflow: hidden;}
 #section1 a .iconbox img {}
 #section1 a .textbox {}
-#section1 a .textbox h3 {}
-#section1 a .textbox p {}
+#section1 a .textbox h3 {font-size: 2rem; font-family: 'Paperlogy-7Bold'; margin-bottom: 0.9rem;}
+#section1 a .textbox p {font-size: 1.8rem; font-family: 'Paperlogy-6SemiBold';}
 
 
-#section2 {}
-#section2 .content {}
+#section2 {padding: 10rem 0;}
+#section2 .content {display: flex; gap: var(--gap1); flex-wrap: wrap
+    ;align-items: flex-start;}
+#section2 .content li {width: 30%; flex-grow: 1;}
 #section2 .content a {}
-#section2 .content a .web {}
-#section2 .content a .web img {}
-#section2 .content a .textbox {}
-#section2 .content a .textbox em {}
-#section2 .content a .textbox h3 {}
-#section2 .content a .textbox p {}
+#section2 .content a .web {border-radius: var(--round1); overflow: hidden; text-align: center; transition: 0.2s; position: relative; top: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.15); height: 400px;}
+#section2 .content a .web img {width: 110%; height: 110%; object-fit: cover;}
+#section2 .content a:hover .web {top: -1rem;}
+
+#section2 .content a .textbox {border-radius:0 0 var(--round1) var(--round1); background: #fff; margin-top: -10rem; padding: 15rem 2rem 6rem;}
+#section2 .content a .textbox em {font-size: var(--fontCate1); font-style: normal; color: var(--colorCate1);}
+#section2 .content a .textbox h3 {font-size: var(--fontTit1); color: var(--colorTxt1); margin: 1rem 0;}
+#section2 .content a .textbox p {font-size: var(--fontCont1); color: var(--colorTxt2); margin-bottom: 2rem; line-height: 1.6;}
 #section2 .content a .textbox .icon {}
 #section2 .content a .textbox .icon img {}
 
 
-#section3 {}
-#section3 h2 {}
-#section3 .content {}
-#section3 .content li {}
-#section3 .content li img {}
+#section3 {padding: 10rem 0;}
+#section3 h2 {font-size: var(--fontH2);font-family: 'Paperlogy-7Bold'; color: var(--colorTxtH2); margin-bottom: 9rem;;}
+#section3 .content {display: flex; flex-wrap: wrap; gap: var(--gap1); align-items: flex-start;}
+
+#section3 .content li {width: 30%; flex-grow: 1; border-radius: var(--round1); overflow: hidden;transition: 0.2s; }
+#section3 .content li img {transition: 0.2s;}
+
+#section3 .content:hover li {}
+/* #section3 .content:hover li img {opacity: 0.5;} */
+#section3 .content li:hover {box-shadow: 0 10px 20px rgba(0,0,0,0.3); background: #fff; transform: scale(1.01);}
+#section3 .content li:hover img {opacity: 1;}
 
 
-#section4 {}
-#section4 h2 {}
-#section4 .content {}
-#section4 .content li {}
-#section4 .content li img {}
+#section4 {padding: 10rem 0;}
+#section4 h2 {font-size: var(--fontH2);font-family: 'Paperlogy-7Bold'; color: var(--colorTxtH2); margin-bottom: 9rem;}
+#section4 .content {display: flex; gap: var(--gap1); flex-wrap: wrap;}
+#section4 .content li {width: 20%; flex-grow: 1; border-radius: var(--gap1); overflow: hidden; position: relative; transition: .2s; }
+#section4 .content li span {position: absolute; width: 100%; height: 40px; background: rgba(0,0,0,0.6); bottom: 0; left: 0; z-index: 2; color: #fff; display: flex; justify-content: center; align-items: center; font-size:1.4rem; transition: 0.15s;}
+#section4 .content li img {width: 100%;}
+
+#section4 .content li:hover {box-shadow: 0 10px 20px rgba(0,0,0,0.3); transform: scale(1.01);}
+#section4 .content li:hover span {background: rgba(0,0,0,1); }
 
 
-footer {padding: 0 11rem; box-sizing: border-box;}
-footer h2 {}
+footer {padding: 10rem 11rem; box-sizing: border-box; display: flex; justify-content: center; flex-direction: column; align-items: center; }
+footer h2 {margin-bottom: 7rem;}
 footer .myinfo {}
-footer .myinfo li {}
-footer .myinfo li .tit {}
+footer .myinfo li {font-size: 3rem; display: flex; justify-content: space-between; gap: 8rem; margin-bottom: 5rem;}
+footer .myinfo li .tit {color: var(--colorTxt2);}
 footer .myinfo li a {}
+
+
+@media screen and (max-width:1200px) {
+    html {font-size: 8px;}
+    header {padding: 3.2rem 4vw;}
+    #visual {padding: 0 7rem; padding-top: 5rem;}
+    #visual .imgbox .slidebox .sungwon {top: 20px;}
+    #section_box {padding: 0 6rem;}
+}
+@media screen and (max-width:900px) {
+    /* html {font-size: 7px;} */
+    body {
+        --gap1 : 3rem;
+        --round1 : 3rem;
+       
+        --fontTit1 : 2rem;
+        --fontCont1 : 2rem;
+        --fontCate1 : 2rem;
+        --fontH2 : 6rem;
+    }
+
+    .titOrange {padding: 1.4rem 3rem; font-size: 2rem; color: #252525; }
+    .titOrange.ct {display: none;}
+
+
+    header {padding: 3.2rem 3rem;}
+    header h1,
+    header.on h1  {width:40px; flex-shrink: 0;}
+    header h1 img {width: 100%;}
+    header nav .gnb {display: none;}
+    header nav .gnb li a {padding: 3rem 2vw;}
+    header .phone,
+    header.on .phone {width: 100px; height: 40px; }
+    header .phone img {width: 30px;}
+    
+    #visual {padding: 0 5rem; padding-top: 5rem;}
+    #visual .textbox strong {font-size: 7rem;}
+    #visual .textbox p {font-size: 1.8rem;}
+    #visual .textbox .contact {position: fixed; top: 43px; right: 150px;}
+
+    #visual .imgbox {position: ;}
+    #visual .imgbox .slidebox .linkbox {border: 1px solid #000;}
+    #visual .imgbox .slidebox .linkbox a {font-size: 2rem; background: #fff; border-radius:3rem; padding: 3rem 5rem; }
+    
+    #section_box {padding: 0 4rem;}
+    #section1 {flex-wrap: wrap;}
+    #section1 a {width: 40%; flex-grow: 1; flex-shrink: 0;}
+
+}
