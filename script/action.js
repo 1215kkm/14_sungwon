@@ -62,4 +62,19 @@ $(document).ready(function() {
 
 $('header nav .gnb li').click(function(){
     $(this).addClass('on')
+});
+
+
+$('.titOrange').click(function(){
+    let docH = $(document).height();
+    let winH = $(window).height();
+    $('html,body').animate({scrollTop:docH - winH}, 2000)
+});
+
+$('#section2 .content a.screen_mobile').mouseenter(function(){
+    let scrH = $(this).height();
+    let imgH = $(this).find('img').height();
+    $(this).find('img').css({top:-imgH + scrH})
+}).mouseleave(function(){
+    $(this).find('img').css({top:0})
 })

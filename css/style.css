@@ -114,7 +114,7 @@ header.on ~ #visual {margin-top: 126px;}
 
 #section_box {padding: 0 11rem; box-sizing: border-box; position: relative; z-index: 7;}
 #section1 {display: flex; justify-content: space-between; gap: 2.4rem; padding: 7rem 0 8vw;} 
-#section1 a {flex-grow: 1; background: #fff; padding: 2.3rem; display: flex; align-items: center; gap: 1.6rem; border-radius: 100px; width: 100px;}
+#section1 a {flex-grow: 1; background: #fff; padding: 2.3rem; display: flex; align-items: center; gap: 1.6rem; border-radius: 100px; width: 100px; cursor: default;}
 #section1 a .iconbox {width: 7rem; height: 7rem; border-radius: 50%; overflow: hidden; flex-shrink: 0;}
 #section1 a .iconbox img {width: 100%;}
 #section1 a .textbox {}
@@ -125,18 +125,26 @@ header.on ~ #visual {margin-top: 126px;}
 #section2 {padding: 10rem 0;}
 #section2 .content {display: flex; gap: var(--gap1); flex-wrap: wrap
     ;align-items: flex-start;}
-#section2 .content li {width: 30%; flex-grow: 1;}
-#section2 .content a {}
-#section2 .content a .web {border-radius: var(--round1); overflow: hidden; text-align: center; transition: 0.2s; position: relative; top: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.15); height: 400px;}
-#section2 .content a .web img {width: 110%; height: 110%; object-fit: cover;}
-#section2 .content a:hover .web {top: -1rem;}
+#section2 .content li {width: 30%; flex-grow: 1; position: relative;}
+#section2 .content a.screen_pc {}
+#section2 .content a.screen_pc .web {border-radius: var(--round1); overflow: hidden; text-align: center; transition: 0.2s; position: relative; top: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.15); height: 400px;}
+#section2 .content a.screen_pc .web img {width: 110%; height: 110%; object-fit: cover;}
+#section2 .content a.screen_pc:hover .web {top: -1rem;}
 
-#section2 .content a .textbox {border-radius:0 0 var(--round1) var(--round1); background: #fff; margin-top: -10rem; padding: 15rem 2rem 6rem;}
-#section2 .content a .textbox em {font-size: var(--fontCate1); font-style: normal; color: var(--colorCate1);}
-#section2 .content a .textbox h3 {font-size: var(--fontTit1); color: var(--colorTxt1); margin: 1rem 0;}
-#section2 .content a .textbox p {font-size: var(--fontCont1); color: var(--colorTxt2); margin-bottom: 2rem; line-height: 1.6;}
-#section2 .content a .textbox .icon {}
-#section2 .content a .textbox .icon img {}
+#section2 .content a.screen_pc .textbox {border-radius:0 0 var(--round1) var(--round1); background: #fff; margin-top: -10rem; padding: 15rem 2rem 6rem;}
+#section2 .content a.screen_pc .textbox em {font-size: var(--fontCate1); font-style: normal; color: var(--colorCate1);}
+#section2 .content a.screen_pc .textbox h3 {font-size: var(--fontTit1); color: var(--colorTxt1); margin: 1rem 0;}
+#section2 .content a.screen_pc .textbox p {font-size: var(--fontCont1); color: var(--colorTxt2); margin-bottom: 2rem; line-height: 1.6;}
+#section2 .content a.screen_pc .textbox .icon {}
+#section2 .content a.screen_pc .textbox .icon img {}
+
+
+#section2 .content a.screen_mobile {position: absolute; right: -20px; z-index: 3; top: 50%; transform: translate(0,-50%); }
+#section2 .content a.screen_mobile .frame1 {width: 140px; height: 230px; background: #fff; border-radius: 10px; box-shadow: 5px 5px 30px rgba(0,0,0,0.18); display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 4px;}
+#section2 .content a.screen_mobile .frame1 .mosc {width: 90%; height: 78%; background: #000; overflow: hidden; position: relative;}
+#section2 .content a.screen_mobile .frame1 .mosc img {width: 100%; position: absolute; transition: 5s; top: 0;}
+/* #section2 .content a.screen_mobile .frame1 .btn1 {position: absolute; width: 10px; height: 30px; background: #fff; right: -5px; top: 20%;;} */
+#section2 .content a.screen_mobile .frame1 .cir {width: 22px; height: 22px; border-radius: 50%; background: #ccc;}
 
 
 #section3 {padding: 10rem 0;}
@@ -222,7 +230,7 @@ footer .myinfo li a {}
     #section_box {padding: 0 4rem;}
     #section1 {flex-wrap: wrap;}
     #section1 a {width: 40%; flex-grow: 1; flex-shrink: 0;}
-    #section2 .content a .web {height: 300px;}
+    #section2 .content a.screen_pc.web {height: 300px;}
 
     footer .myinfo li {font-size: 2rem;}
 }
@@ -250,8 +258,20 @@ footer .myinfo li a {}
     #visual .imgbox .slidebox .linkbox {bottom: 0; gap: 2rem;}
     #visual .imgbox .slidebox .linkbox a {}
     
-    #section2 .content a .textbox p {max-height: 70px; overflow: hidden;}
-    #section2 .content a .web {height: 200px;}
+    #section2 .content li {width: 40%;}
+    #section2 .content a.screen_pc.textbox p {max-height: 70px; overflow: hidden;}
+    #section2 .content a.screen_pc.web {height: 200px;}
+
+
+    #section2 .content a.screen_mobile { }
+    #section2 .content a.screen_mobile .frame1 {width: 100px; height: 170px; gap: 4px;}
+    #section2 .content a.screen_mobile .frame1 .mosc {}
+    #section2 .content a.screen_mobile .frame1 .mosc img {}
+    #section2 .content a.screen_mobile .frame1 .cir {}
+
+
+
+
     #section3 .content li {max-height: 350px;}
     #section3 .content li.empty {display: none;}
     #section4 .content li {width: 25%; }
@@ -265,6 +285,9 @@ footer .myinfo li a {}
 }
 
 
+@media screen and (max-width:490px) {
+    #section2 .content li {width: 50%;}
+}
 @media screen and (max-width:390px) {
     header,
     header.on {height: 120px; flex-wrap: wrap; justify-content: space-between; padding: 1rem 2rem; }
