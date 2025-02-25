@@ -78,3 +78,16 @@ $('#section2 .content a.screen_mobile').mouseenter(function(){
 }).mouseleave(function(){
     $(this).find('img').css({top:0})
 })
+
+$('.career').click(function(e){
+    e.preventDefault()
+    $('.popup1').fadeIn(200).css({display:'flex'})
+})
+$('.btn_close').click(function(e){
+    e.preventDefault()
+    $('.popup').fadeOut(200)
+})
+$('.licence').click(function(e){
+    e.preventDefault()
+    $('.popup2').fadeIn(200).css({display:'flex'})
+})
