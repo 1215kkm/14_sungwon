@@ -139,7 +139,7 @@ header.on ~ #visual {margin-top: 126px;}
 
 
 #section2 .content a.screen_mobile {position: absolute; right: -20px; z-index: 3; top: 50%; transform: translate(0,-50%); }
-#section2 .content a.screen_mobile .frame1 {width: 140px; height: 230px; background: #fff; border-radius: 10px; box-shadow: 5px 5px 30px rgba(0,0,0,0.18); display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 4px;}
+#section2 .content a.screen_mobile .frame1 {width: 140px; height: 230px; background: #fff; border-radius: 10px; box-shadow: 5px 5px 30px rgba(0,0,0,0.18); display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 4px; border: 1px solid #bbb;}
 #section2 .content a.screen_mobile .frame1 .mosc {width: 90%; height: 78%; background: #000; overflow: hidden; position: relative;}
 #section2 .content a.screen_mobile .frame1 .mosc img {width: 100%; position: absolute; transition: 5s; top: 0;}
 /* #section2 .content a.screen_mobile .frame1 .btn1 {position: absolute; width: 10px; height: 30px; background: #fff; right: -5px; top: 20%;;} */
