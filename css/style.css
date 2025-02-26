@@ -123,12 +123,11 @@ header.on ~ #visual {margin-top: 126px;}
 
 
 #section2 {padding: 10rem 0;}
-#section2 .content {display: flex; gap: var(--gap1); flex-wrap: wrap
-    ;align-items: flex-start;}
-#section2 .content li {width: 30%; flex-grow: 1; position: relative;}
+#section2 .content {display: flex; gap: var(--gap1); flex-wrap: wrap;align-items: flex-start; }
+#section2 .content li {width: 30%; flex-grow: 1; position: relative; margin-bottom: 50px;}
 #section2 .content a.screen_pc {}
-#section2 .content a.screen_pc .web {border-radius: var(--round1); overflow: hidden; text-align: center; transition: 0.2s; position: relative; top: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.15); height: 400px;}
-#section2 .content a.screen_pc .web img {width: 110%; height: 110%; object-fit: cover;}
+#section2 .content a.screen_pc .web {border-radius: var(--round1); overflow: hidden; text-align: center; transition: 0.2s; position: relative; top: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+#section2 .content a.screen_pc .web img {width: 100%; }
 #section2 .content a.screen_pc:hover .web {top: -1rem;}
 
 #section2 .content a.screen_pc .textbox {border-radius:0 0 var(--round1) var(--round1); background: #fff; margin-top: -10rem; padding: 15rem 2rem 6rem;}
@@ -337,7 +336,10 @@ footer .myinfo li a {}
 
 
 @media screen and (max-width:490px) {
-    #section2 .content li {width: 50%;}
+    #section2 .content li {width: 80%; flex-grow: 0; margin: 0 auto; margin-bottom: 30px;}
+    #section3 .content li {width: 80%;}
+    #section4 .content li {width: 40%;}
+    #section2 .content li a.screen_pc .textbox {background: none;}
 }
 @media screen and (max-width:390px) {
     header,
